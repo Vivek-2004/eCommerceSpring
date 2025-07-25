@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
+//CONTROLLER -> SERVICE -> API GATEWAY / REPOSITORY
+
 @RestController
 @RequestMapping("/api/categories")
 public class CategoryController {

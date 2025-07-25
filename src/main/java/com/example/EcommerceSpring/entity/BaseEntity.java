@@ -15,6 +15,7 @@ import java.time.Instant;
 *
 *   Unlike @Entity, it does not get its own table
 */
+
 @MappedSuperclass
 @Getter
 @Setter

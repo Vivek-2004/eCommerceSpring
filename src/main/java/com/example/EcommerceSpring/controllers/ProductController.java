@@ -1,7 +1,13 @@
 package com.example.EcommerceSpring.controllers;
 
 import com.example.EcommerceSpring.dto.ProductDTO;
+import com.example.EcommerceSpring.dto.ProductWithCategoryDTO;
+import com.example.EcommerceSpring.exception.CategoryNotFoundException;
+import com.example.EcommerceSpring.exception.ProductNotFoundException;
 import com.example.EcommerceSpring.services.IProductService;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
@@ -10,6 +16,7 @@ import java.io.IOException;
 @RequestMapping("api/product")
 public class ProductController {
 
+//   @Qualifier("productService")
     IProductService productService;
 
     ProductController(IProductService _productService) {
@@ -17,9 +24,20 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ProductDTO> getProductById(@PathVariable Long id) throws IOException {
+    public ResponseEntity<ProductDTO> getProductById(@PathVariable Long id) throws Exception {
+//        Handling Exceptions using try-catch
+//        try {
+//            ProductDTO result = productService.getProductById(id);
+//            return ResponseEntity.status(200).body(result);
+//        } catch (Exception e) {
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product Not Found");
+//        }
+//        ProductDTO result = productService.getProductById(id);
+//        return ResponseEntity.ok(result);
+//        return ResponseEntity.status(200).body(result);
+
         ProductDTO result = productService.getProductById(id);
-        return ResponseEntity.status(200).body(result);
+        return ResponseEntity.ok(result);
     }
 
     @PostMapping
@@ -27,5 +45,16 @@ public class ProductController {
         ProductDTO result = productService.createProduct(dto);
         return ResponseEntity.status(201).body(result);
     }
+
+    @GetMapping("/{id}/details")
+    public ResponseEntity<ProductWithCategoryDTO> getProductWithCategory(@PathVariable Long id) throws Exception {
+        ProductWithCategoryDTO dto = productService.getProductWithCategory(id);
+        return ResponseEntity.ok(dto);
+    }
+
+//    @ExceptionHandler(ProductNotFoundException.class)
+//    public ResponseEntity<String> handleProductNotFound(ProductNotFoundException ex) {
+//        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+//    }
 
 }

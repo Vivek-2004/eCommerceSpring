@@ -4,6 +4,7 @@ import com.example.EcommerceSpring.dto.AllProductsOfCategoryDTO;
 import com.example.EcommerceSpring.dto.CategoryDTO;
 import com.example.EcommerceSpring.dto.ProductDTO;
 import com.example.EcommerceSpring.entity.Category;
+import com.example.EcommerceSpring.exception.CategoryNotFoundException;
 import com.example.EcommerceSpring.mappers.CategoryMapper;
 import com.example.EcommerceSpring.mappers.ProductMapper;
 import com.example.EcommerceSpring.repository.CategoryRepository;
@@ -43,7 +44,7 @@ public class CategoryService implements ICategoryService {
     @Override
     public CategoryDTO getByName(String name) throws Exception {
         Category category = repo.findByName(name)
-                .orElseThrow(() -> new Exception("Category Not Found with name: " + name));
+                .orElseThrow(() -> new CategoryNotFoundException("Category Not Found with name: " + name));
         return CategoryMapper.toDTO(category);
     }
 
