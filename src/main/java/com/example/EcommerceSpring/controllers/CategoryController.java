@@ -5,10 +5,9 @@ import com.example.EcommerceSpring.dto.CategoryDTO;
 import com.example.EcommerceSpring.services.ICategoryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.io.IOException;
 import java.util.List;
 
-//CONTROLLER -> SERVICE -> API GATEWAY / REPOSITORY
+// CONTROLLER -> SERVICE -> API GATEWAY / REPOSITORY
 
 @RestController
 @RequestMapping("/api/categories")

@@ -10,7 +10,6 @@ import com.example.EcommerceSpring.repository.CategoryRepository;
 import com.example.EcommerceSpring.repository.ProductRepository;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
-import java.io.IOException;
 
 @Service  // ("productService")
 @Primary

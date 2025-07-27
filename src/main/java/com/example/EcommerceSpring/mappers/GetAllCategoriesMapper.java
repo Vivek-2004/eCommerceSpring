@@ -2,7 +2,6 @@ package com.example.EcommerceSpring.mappers;
 
 import com.example.EcommerceSpring.dto.CategoryDTO;
 import com.example.EcommerceSpring.dto.FakeStoreCategoryResponseDTO;
-
 import java.util.List;
 
 public class GetAllCategoriesMapper {

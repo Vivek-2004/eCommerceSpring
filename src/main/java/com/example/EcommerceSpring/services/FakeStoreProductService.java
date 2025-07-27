@@ -4,7 +4,6 @@ import com.example.EcommerceSpring.dto.ProductDTO;
 import com.example.EcommerceSpring.dto.ProductWithCategoryDTO;
 import com.example.EcommerceSpring.gateway.IProductGateway;
 import org.springframework.stereotype.Service;
-import java.io.IOException;
 
 @Service
 public class FakeStoreProductService implements IProductService {

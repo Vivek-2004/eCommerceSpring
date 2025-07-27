@@ -5,7 +5,6 @@ import com.example.EcommerceSpring.dto.FakeStoreCategoryResponseDTO;
 import com.example.EcommerceSpring.mappers.GetAllCategoriesMapper;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
-
 import java.io.IOException;
 import java.util.List;
 

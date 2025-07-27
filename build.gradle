@@ -30,6 +30,9 @@ dependencies {
 	implementation 'com.squareup.retrofit2:converter-gson:3.0.0'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	runtimeOnly 'com.mysql:mysql-connector-j'
+	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:4.3.0")
+//	implementation 'org.flywaydb:flyway-core:11.10.4'
+//	implementation 'org.flywaydb:flyway-mysql:11.10.4'
 
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'

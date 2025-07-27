@@ -6,7 +6,6 @@ import com.example.EcommerceSpring.entity.Category;
 import com.example.EcommerceSpring.entity.Product;
 
 public class ProductMapper {
-
     public static ProductDTO toDto(Product product) {
         return ProductDTO.builder()
                 .id(product.getId())
@@ -54,5 +53,4 @@ public class ProductMapper {
                 .category(CategoryMapper.toDTO(product.getCategory()))
                 .build();
     }
-
 }

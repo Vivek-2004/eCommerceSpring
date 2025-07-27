@@ -2,15 +2,9 @@ package com.example.EcommerceSpring.controllers;
 
 import com.example.EcommerceSpring.dto.ProductDTO;
 import com.example.EcommerceSpring.dto.ProductWithCategoryDTO;
-import com.example.EcommerceSpring.exception.CategoryNotFoundException;
-import com.example.EcommerceSpring.exception.ProductNotFoundException;
 import com.example.EcommerceSpring.services.IProductService;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.io.IOException;
 
 @RestController
 @RequestMapping("api/product")
